@@ -12,7 +12,7 @@ class Account {
 			Map.Entry m = (Map.Entry) i.next();
 			Date date = (Date) m.getKey();
 			Integer value= (Integer) m.getValue();
-			if(date.equals(range.getStart()) || date.equals(range.getEnd()) || (date.after(range.getStart()) && date.before(range.getEnd())))
+			if(range.includes(date))
 			{
 				SimpleDateFormat dformat = new SimpleDateFormat("dd.MM.yyyy");
 				String formattedDate = dformat.format(date);
